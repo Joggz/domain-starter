@@ -69,6 +69,7 @@ const App = () => {
         });
         // Wait for the transaction to be mined
         const receipt = await tx.wait();
+        await provider.waitForTransaction(tx.hash);
 
         // Check if the transaction was successfully completed
         if (receipt.status === 1) {
@@ -77,8 +78,9 @@ const App = () => {
           );
 
           // Set the record for the domain
-          tx = contract.setRecord(domain, record);
-          await tx.wait();
+          tx = await contract.setRecord(domain, record);
+          await provider.waitForTransaction(tx.hash);
+          // await tx.wait();
 
           console.log(
             "Record set! https://mumbai.polygonscan.com/tx/" + tx.hash

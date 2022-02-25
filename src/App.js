@@ -8,7 +8,8 @@ import contractABI from "./utils/contractAbi.json";
 const TWITTER_HANDLE = "_buildspace";
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const tld = ".ninja";
-const CONTRACT_ADDRESS = "YOUR_CONTRACT_ADDRESS_HERE";
+// makng this public cos its no big deal.
+const CONTRACT_ADDRESS = "0x86eB91cbc9793D86fA941fa8e96ec96b4E61C264";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
